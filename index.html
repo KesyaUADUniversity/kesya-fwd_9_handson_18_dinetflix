@@ -23,7 +23,6 @@
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 0.1em;
     }
-    /* Perbaikan: gunakan .hero-bg bukan .bacground */
     .hero-bg img {
       position: absolute;
       top: 0;
@@ -42,6 +41,41 @@
       background: rgba(0,0,0,0.7);
       z-index: 0;
     }
+
+    /* Overlay untuk card drama */
+    .card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      padding: 12px;
+      color: white;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .drama-card {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .drama-card:hover .card-overlay {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .drama-card img {
+      transition: transform 0.3s;
+    }
+
+    .drama-card:hover img {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -54,22 +88,19 @@
         <option>Bahasa Indonesia</option>
         <option>English</option>
       </select>
-      <button class="bg-red-600 hover:bg-red-700 px-4 py-1 rounded font-medium transition">
-        Masuk
+      <button id="login-btn" class="bg-red-600 hover:bg-red-700 px-4 py-1 rounded font-medium transition">
+        Masuk/start
       </button>
     </div>
   </nav>
 
-  <!-- Hero Section dengan IMG sebagai Background -->
+  <!-- Hero Section -->
   <section class="pt-20 pb-16 relative min-h-screen flex items-center justify-center">
-    <!-- Gambar Background (ini yang kamu ganti!) -->
     <div class="hero-bg">
       <img src="the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv.jpg" alt="Netflix Grid Background" />
     </div>
-    <!-- Overlay Gelap -->
     <div class="overlay"></div>
 
-    <!-- Konten Utama (teks harus di atas background) -->
     <div class="max-w-4xl mx-auto text-center z-10 px-4">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">
         Film dan serial TV tanpa batas, dan lebih banyak lagi
@@ -91,53 +122,71 @@
     </div>
   </section>
 
-  <!-- Section: Sedang Tren Sekarang (Grid + Flex) -->
+  <!-- Section: Sedang Tren Sekarang -->
   <section class="px-4 py-8">
     <h2 class="text-xl font-bold mb-4">Sedang Tren Sekarang</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
       <!-- Card 1 -->
-      <div class="bg-gray-800 rounded overflow-hidden shadow-lg">
-        <img src="world.jpg" alt="world" class="w-full h-48 object-cover">
+      <div class="bg-gray-800 rounded overflow-hidden shadow-lg drama-card"
+           data-title="The World of the Married"
+           data-year="2020"
+           data-genre="KDrama">
+        <img src="world.jpg" alt="The World of the Married" class="w-full h-48 object-cover">
         <div class="p-3">
-          <h3 class="font-medium">The world of the married</h3>
+          <h3 class="font-medium">The World of the Married</h3>
           <p class="text-gray-400 text-sm">2020 • KDrama</p>
         </div>
       </div>
       <!-- Card 2 -->
-      <div class="bg-gray-800 rounded overflow-hidden shadow-lg">
-        <img src="download.jpg" alt="Film 2" class="w-full h-48 object-cover">
+      <div class="bg-gray-800 rounded overflow-hidden shadow-lg drama-card"
+           data-title="Who Are You: School"
+           data-year="2015"
+           data-genre="KDrama">
+        <img src="download.jpg" alt="Who Are You: School" class="w-full h-48 object-cover">
         <div class="p-3">
-          <h3 class="font-medium">Who are you school</h3>
+          <h3 class="font-medium">Who Are You: School</h3>
           <p class="text-gray-400 text-sm">2015 • KDrama</p>
         </div>
       </div>
       <!-- Card 3 -->
-      <div class="bg-gray-800 rounded overflow-hidden shadow-lg">
-        <img src="download (1).jpg" alt="Film 3" class="w-full h-48 object-cover">
+      <div class="bg-gray-800 rounded overflow-hidden shadow-lg drama-card"
+           data-title="Exo Next Door"
+           data-year="2014"
+           data-genre="KDrama">
+        <img src="download (1).jpg" alt="Exo Next Door" class="w-full h-48 object-cover">
         <div class="p-3">
           <h3 class="font-medium">Exo Next Door</h3>
           <p class="text-gray-400 text-sm">2014 • KDrama</p>
         </div>
       </div>
       <!-- Card 4 -->
-      <div class="bg-gray-800 rounded overflow-hidden shadow-lg">
-        <img src="download (2).jpg" alt="Film 4" class="w-full h-48 object-cover">
+      <div class="bg-gray-800 rounded overflow-hidden shadow-lg drama-card"
+           data-title="Touch Your Heart"
+           data-year="2017"
+           data-genre="KDrama">
+        <img src="download (2).jpg" alt="Touch Your Heart" class="w-full h-48 object-cover">
         <div class="p-3">
           <h3 class="font-medium">Touch Your Heart</h3>
           <p class="text-gray-400 text-sm">2017 • KDrama</p>
         </div>
       </div>
       <!-- Card 5 -->
-      <div class="bg-gray-800 rounded overflow-hidden shadow-lg">
-        <img src="download (3).jpg" alt="Film 5" class="w-full h-48 object-cover">
+      <div class="bg-gray-800 rounded overflow-hidden shadow-lg drama-card"
+           data-title="Hotel Del Luna"
+           data-year="2017"
+           data-genre="Horror Korea">
+        <img src="download (3).jpg" alt="Hotel Del Luna" class="w-full h-48 object-cover">
         <div class="p-3">
-          <h3 class="font-medium">Hotel deluna</h3>
-          <p class="text-gray-400 text-sm">2017 • horror korea</p>
+          <h3 class="font-medium">Hotel Del Luna</h3>
+          <p class="text-gray-400 text-sm">2017 • Horror Korea</p>
         </div>
       </div>
       <!-- Card 6 -->
-      <div class="bg-gray-800 rounded overflow-hidden shadow-lg">
-        <img src="【VIP】.jpg" alt="Film 6" class="w-full h-48 object-cover">
+      <div class="bg-gray-800 rounded overflow-hidden shadow-lg drama-card"
+           data-title="VIP"
+           data-year="2020"
+           data-genre="KDrama">
+        <img src="【VIP】.jpg" alt="VIP" class="w-full h-48 object-cover">
         <div class="p-3">
           <h3 class="font-medium">VIP</h3>
           <p class="text-gray-400 text-sm">2020 • KDrama</p>
@@ -145,6 +194,124 @@
       </div>
     </div>
   </section>
+
+  <!-- Section: Alasan Lainnya untuk Bergabung -->
+  <section class="px-4 py-10 bg-black">
+    <h2 class="text-xl font-bold mb-6 text-white">Alasan Lainnya untuk Bergabung</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-gradient-to-br from-gray-900 to-purple-900 p-5 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold mb-3">Nikmati di TV-mu</h3>
+        <p class="text-gray-300 text-sm mb-4">
+          Tonton di Smart TV, Playstation, Xbox, Chromecast, Apple TV, pemutar Blu-ray, dan banyak lagi.
+        </p>
+        <div class="flex justify-end">
+          <img src="download (8).jpg" alt="TV Icon" class="w-10 h-8 object-contain">
+        </div>
+      </div>
+      <div class="bg-gradient-to-br from-gray-900 to-purple-900 p-5 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold mb-3">Download serial untuk menontonnya secara offline</h3>
+        <p class="text-gray-300 text-sm mb-4">
+          Simpan favoritmu dengan mudah agar selalu ada acara TV dan film yang bisa ditonton.
+        </p>
+        <div class="flex justify-end">
+          <img src="Files Silhouette Transparent Background, File Download Icon, Download Icons, File Icons, File PNG Image For Free Download.jpg" alt="Download Icon" class="w-10 h-8 object-contain">
+        </div>
+      </div>
+      <div class="bg-gradient-to-br from-gray-900 to-purple-900 p-5 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold mb-3">Tonton di mana pun</h3>
+        <p class="text-gray-300 text-sm mb-4">
+          Streaming film dan serial TV tanpa batas di ponsel, tablet, laptop, dan TV-mu.
+        </p>
+        <div class="flex justify-end">
+          <img src="download (10).jpg" alt="Device Icon" class="w-10 h-8 object-contain">
+        </div>
+      </div>
+      <div class="bg-gradient-to-br from-gray-900 to-purple-900 p-5 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold mb-3">Buat profil untuk anak</h3>
+        <p class="text-gray-300 text-sm mb-4">
+          Kirim anak-anak untuk bertualang bersama karakter favorit di dunia yang dibuat khusus untuk mereka — gratis dengan keanggotaanmu.
+        </p>
+        <div class="flex justify-end">
+          <img src="Hello.jpg" alt="Kids Icon" class="w-10 h-8 object-contain">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript Interaktif -->
+  <script>
+    // Form Submit
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value;
+      if (!email || !email.includes('@')) {
+        alert('⚠️ Masukkan email yang valid!');
+        return;
+      }
+      localStorage.setItem('dinetflix_email', email);
+      alert(`✅ Terima kasih! Kami akan mengirim info ke:\n${email}`);
+      this.reset();
+    });
+
+    // Tombol Masuk
+    document.getElementById('login-btn').addEventListener('click', function() {
+      const email = localStorage.getItem('dinetflix_email');
+      if (email) {
+        alert(`👋 Selamat datang kembali!\n${email}`);
+      } else {
+        const input = prompt('Masukkan email untuk login:');
+        if (input && input.includes('@')) {
+          localStorage.setItem('dinetflix_email', input);
+          alert(`✅ Login berhasil!\nSelamat datang!`);
+        } else {
+          alert('❌ Email tidak valid.');
+        }
+      }
+    });
+
+    // Card Drama Interaktif
+    document.querySelectorAll('.drama-card').forEach(card => {
+      const title = card.dataset.title;
+      const year = card.dataset.year;
+      const genre = card.dataset.genre;
+
+      const overlay = document.createElement('div');
+      overlay.className = 'card-overlay';
+      overlay.innerHTML = `
+        <div class="flex justify-between items-end">
+          <div>
+            <h4 class="font-bold">${title}</h4>
+            <p class="text-sm text-gray-300">${year} • ${genre}</p>
+          </div>
+          <button class="add-watchlist px-3 py-1 bg-red-600 text-white text-xs rounded hover:bg-red-700">
+            + Tonton Nanti
+          </button>
+        </div>
+      `;
+      card.appendChild(overlay);
+
+      // Klik card → tonton
+      card.addEventListener('click', (e) => {
+        if (!e.target.closest('.add-watchlist')) {
+          alert(`🎬 Sedang menonton:\n${title} (${year})\n\nGenre: ${genre}`);
+        }
+      });
+
+      // Tambah ke watchlist
+      overlay.querySelector('.add-watchlist').addEventListener('click', (e) => {
+        e.stopPropagation();
+        let watchlist = JSON.parse(localStorage.getItem('dinetflix_watchlist') || '[]');
+        const exists = watchlist.some(item => item.title === title);
+        if (!exists) {
+          watchlist.push({ title, year, genre });
+          localStorage.setItem('dinetflix_watchlist', JSON.stringify(watchlist));
+          alert(`✅ "${title}" ditambahkan ke daftar tonton nanti!`);
+        } else {
+          alert(`ℹ️ "${title}" sudah ada di daftar.`);
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
