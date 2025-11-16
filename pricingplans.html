@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing - DINETFLIX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: white;
+    }
+    /* Styling tabel agar mirip Netflix */
+    .feature-table th,
+    .feature-table td {
+      padding: 12px 16px;
+      text-align: center;
+      border-bottom: 1px solid #374151;
+    }
+    .feature-table th:first-child,
+    .feature-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+    .feature-table th {
+      font-size: 0.875rem;
+      color: #d1d5db;
+    }
+  </style>
+</head>
+<body class="bg-black">
+
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <!-- Judul -->
+    <h1 class="text-3xl font-bold text-center mb-12">Pilih Paket Langgananmu</h1>
+
+    <!-- Card Pricing -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <!-- Basic -->
+      <div class="bg-gray-900 p-6 rounded-xl border border-gray-700">
+        <h3 class="text-xl font-bold mb-2">Basic</h3>
+        <p class="text-gray-400 text-sm mb-4">Nonton di 1 layar</p>
+        <div class="text-3xl font-bold my-4">Rp100K</div>
+        <button class="trial-btn w-full py-3 bg-red-600 hover:bg-red-700 rounded font-medium transition">
+          Start Free Trial
+        </button>
+      </div>
+
+      <!-- Standard (Most Popular) -->
+      <div class="bg-gradient-to-b from-purple-900 to-pink-900 p-6 rounded-xl relative">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white text-black text-xs px-3 py-1 rounded-full font-bold">
+          Most Popular
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-white">Standard</h3>
+        <p class="text-gray-200 text-sm mb-4">Nonton di 2 layar • HD</p>
+        <div class="text-3xl font-bold my-4 text-white">Rp150K</div>
+        <button class="trial-btn w-full py-3 bg-black hover:bg-gray-800 text-white rounded font-medium transition">
+          Start Free Trial
+        </button>
+      </div>
+
+      <!-- Premium -->
+      <div class="bg-gray-900 p-6 rounded-xl border border-gray-700">
+        <h3 class="text-xl font-bold mb-2">Premium</h3>
+        <p class="text-gray-400 text-sm mb-4">Nonton di 4 layar • Full HD</p>
+        <div class="text-3xl font-bold my-4">Rp200K</div>
+        <button class="trial-btn w-full py-3 bg-red-600 hover:bg-red-700 rounded font-medium transition">
+          Start Free Trial
+        </button>
+      </div>
+
+      <!-- Ultimate -->
+      <div class="bg-gray-900 p-6 rounded-xl border border-gray-700">
+        <h3 class="text-xl font-bold mb-2">Ultimate</h3>
+        <p class="text-gray-400 text-sm mb-4">Nonton di 6 layar • 4K + HDR</p>
+        <div class="text-3xl font-bold my-4">Rp250K</div>
+        <button class="trial-btn w-full py-3 bg-red-600 hover:bg-red-700 rounded font-medium transition">
+          Start Free Trial
+        </button>
+      </div>
+    </div>
+
+    <!-- Tabel Perbandingan Fitur -->
+    <div class="overflow-x-auto rounded-lg border border-gray-800">
+      <table class="feature-table w-full text-sm">
+        <thead class="bg-gray-900">
+          <tr>
+            <th class="rounded-tl-lg">Fitur</th>
+            <th>Basic</th>
+            <th class="bg-gradient-to-r from-purple-900 to-pink-900">Standard</th>
+            <th>Premium</th>
+            <th class="rounded-tr-lg">Ultimate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Harga per bulan</td>
+            <td>Rp100.000</td>
+            <td class="bg-gradient-to-r from-purple-900/30 to-pink-900/30">Rp150.000</td>
+            <td>Rp200.000</td>
+            <td>Rp250.000</td>
+          </tr>
+          <tr>
+            <td>Nonton di perangkat sekaligus</td>
+            <td>1</td>
+            <td class="bg-gradient-to-r from-purple-900/30 to-pink-900/30">2</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Kualitas video</td>
+            <td>SD</td>
+            <td class="bg-gradient-to-r from-purple-900/30 to-pink-900/30">HD</td>
+            <td>Full HD</td>
+            <td>4K + HDR</td>
+          </tr>
+          <tr>
+            <td>Download offline</td>
+            <td>✅</td>
+            <td class="bg-gradient-to-r from-purple-900/30 to-pink-900/30">✅</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Konten eksklusif</td>
+            <td>❌</td>
+            <td class="bg-gradient-to-r from-purple-900/30 to-pink-900/30">✅</td>
+            <td>✅</td>
+            <td>✅ + Early Access</td>
+          </tr>
+          <tr>
+            <td>Profil anak</td>
+            <td>❌</td>
+            <td class="bg-gradient-to-r from-purple-900/30 to-pink-900/30">✅</td>
+            <td>✅</td>
+            <td>✅ (3 profil)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-center text-gray-400 mt-6 text-sm">
+      Semua paket termasuk uji coba gratis 30 hari. Batalkan kapan saja.
+    </p>
+  </div>
+
+  <!-- JavaScript Interaktif -->
+  <script>
+    document.querySelectorAll('.trial-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        // Ambil nama paket dari card
+        const card = this.closest('div');
+        const planName = card.querySelector('h3').textContent;
+
+        // ✨ Animasi klik
+        this.classList.add('animate-pulse');
+        setTimeout(() => this.classList.remove('animate-pulse'), 600);
+
+        // 💬 Notifikasi
+        alert(`✅ Kamu memilih paket:\n${planName}\n\nAkun gratis 30 hari sedang dibuat!`);
+      });
+    });
+  </script>
+
+</body>
+</html>
